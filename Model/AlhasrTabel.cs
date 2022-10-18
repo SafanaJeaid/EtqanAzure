@@ -6,10 +6,17 @@ public class AlhasrTabel
     [Key]
     public string ID { get; set; }
     [Required]
+
+    public string Title { get; set; }
     public string location { get; set; }
+    public string building { get; set; }
+    public string roomlabel { get; set; }
+    public string?department { get; set; }
+    public string roomactivity { get; set; }
+
+    public string Modified { get; set; }
     //[Display(Name = "Display Order")]
     //[Range(1, 100, ErrorMessage = "Display order must be in range of 1-100!!!")]
-    public string Title { get; set; }
 }
 /*
 

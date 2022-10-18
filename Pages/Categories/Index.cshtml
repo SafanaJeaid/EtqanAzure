@@ -9,12 +9,12 @@
 <div class="container p-3">
 	<div class="row pt-4">
 		<div class="col-6">
-			<h2 class="text-primary">Category List</h2>
+			<h2 class="text-primary">بيانات الحصر</h2>
 		</div>
 		<div class="col-6 text-end">
 			<form method="post">
-				<input type="submit" value="Export" asp-page-handler="Export" />
-				<button class="btn btn-primary">ExportExcel</button>
+				
+				<button asp-page-handler="Export" class="btn btn-primary">تحميل البيانات</button>
 	        </form>
 @*			<a asp-page="create" class="btn btn-primary">
 				<i class="bi bi-plus-square"></i> &nbsp;Export data to excel
@@ -28,12 +28,26 @@
 		<thead>
 			<tr>
 				<th>
-					Location
+					ID
 				</th>
 				<th>
-					Oracle Chairs
+					المقر
 				</th>
-				<th></th>
+				<th>
+					المبنى
+				</th>
+				<th>
+					رقم الغرفة
+				</th>
+				<th>
+					الجهة
+				</th>
+				<th>
+					نوع القاعة
+				</th>
+				<th>
+					تاريخ آخر تعديل
+				</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -41,9 +55,14 @@
 			@foreach (var obj in Model.AlhasrTabel)
 			{
 				<tr>
-					<td width="50%">@obj.location</td>
 					<td width="30%">@obj.Title</td>
-					<td>
+					<td width="20%">@obj.location</td>
+					<td width="10%">@obj.building</td>
+					<td width="10%">@obj.roomlabel</td>
+					<td width="20%">@obj.department</td>
+					<td width="20%">@obj.roomactivity</td>
+					<td width="20%">@obj.Modified</td>
+@*					<td>
 						<div class="w-75 btn-group" role="group">
 						<a asp-page="Edit" asp-route-id="@obj.ID" class="btn btn-primary mx-2">
 							<i class="bi bi-pencil-square"></i>
@@ -52,7 +71,7 @@
 							<i class="bi bi-trash-fill"></i>
 						</a>
 						</div>
-					</td>
+					</td>*@
 				</tr>
 			}
 			

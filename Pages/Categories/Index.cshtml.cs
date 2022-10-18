@@ -29,10 +29,10 @@ public class IndexModel : PageModel
         _db = db;
     }
 
-    public void OnGet()
+    public async Task OnGet()
     {
         // this is what retrieves all the items. instead of query.
-        AlhasrTabel = _db.AlhasrTabel.FromSqlRaw("SELECT TOP (10) * FROM [dbo].[AlhasrTabel]");
+        AlhasrTabel =  _db.AlhasrTabel.FromSqlRaw("SELECT TOP (10) * FROM [dbo].[AlhasrTabel]");
     }
 
     /*    public async Task<IActionResult> OnPostExportExcelAsync()
@@ -60,15 +60,22 @@ public class IndexModel : PageModel
     public FileResult OnPostExport()
     {
         DataTable dt = new DataTable("Grid");
-        dt.Columns.AddRange(new DataColumn[2] { new DataColumn("location"),
-                                        new DataColumn("Title")});
+        dt.Columns.AddRange(new DataColumn[7] { new DataColumn("Title"),
+                                        new DataColumn("«·„ﬁ—"),
+                                        new DataColumn("«·„»‰Ï"),
+                                        new DataColumn("—ﬁ„ «·€—›…"),
+                                        new DataColumn("«·ÃÂ…"),
+                                        new DataColumn("‰Ê⁄ «·ﬁ«⁄…"),
+                                        new DataColumn(" «—ÌŒ ¬Œ—  ⁄œÌ·")
+
+        });
 
         var AlhasrTabelVar = from AlhasrTabel in this._db.AlhasrTabel.Take(10)
                         select AlhasrTabel;
 
         foreach (var customer in AlhasrTabelVar)
         {
-            dt.Rows.Add(customer.location, customer.Title);
+            dt.Rows.Add(customer.Title, customer.location, customer.building, customer.roomlabel, customer.department, customer.roomactivity, customer.Modified) ;
         }
 
         using (XLWorkbook wb = new XLWorkbook())
