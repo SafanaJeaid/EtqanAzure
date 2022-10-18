@@ -29,10 +29,20 @@ public class IndexModel : PageModel
         _db = db;
     }
 
-    public async Task OnGet()
+    public async Task OnGet(string searchString)
     {
         // this is what retrieves all the items. instead of query.
         AlhasrTabel =  _db.AlhasrTabel.FromSqlRaw("SELECT TOP (10) * FROM [dbo].[AlhasrTabel]");
+
+        var AlHasirS = from m in AlhasrTabel
+                       select m;
+
+        if (!String.IsNullOrEmpty(searchString))
+        {
+            AlHasirS = AlHasirS.Where(s => s.location.Contains(searchString));
+        }
+
+        AlhasrTabel = AlHasirS;
     }
 
     /*    public async Task<IActionResult> OnPostExportExcelAsync()
