@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - منظومة اتقان</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/AbbyTryout.styles.css" asp-append-version="true" />
-</head>
+    <link rel="stylesheet" href="~/css/style-rtl.css" asp-append-version="true" />
+@*    <link rel="stylesheet" href="~/AbbyTryout.styles.css" asp-append-version="true" />
+*@</head>
 <body>
+@*<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -21,33 +22,83 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">الصفحة الرئيسية</a>
-                        </li>
+                        </li>*@
 @*                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>*@
-                        <li class="nav-item">
+@*                        <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Categories/Index">أعمال الحصر</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
+    </header>*@
+
+<!-- navbar -->
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="/Index"><img width="15%" height="15%" src="~/images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item border-right border-left border-warning">
+                    @*<a class="nav-link active text-warning" href="index.html">الصفحة الرئيسية<span class="sr-only">(current)</span></a>*@
+                    <a class="nav-link active text-warning" asp-area="" asp-page="/Index">الصفحة الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-page="/Categories/Index">اعمال الحصر</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+@*            <footer class="footer text-muted">
+                <div class="container">
+                    &copy; 1444 - منظومة اتقان
+                </div>
+            </footer>
+        </main>*@
     </div>
 
-    <footer class="border-top footer text-muted">
+
+    @RenderBody()
+    @if (IsSectionDefined("Footer"))
+    {
+        @RenderSection("Footer")
+    }
+    else
+    {
+        @RenderSection("Footer",false)
+        <footer class="footer text-muted">
+            <div class="container">
+                &copy; 1444 - منظومة اتقان
+            </div>
+        </footer>
+    }
+@*    <footer class ="footer text-muted">
         <div class="container">
-            &copy; 1444 - منظومة اتقان
+        @RenderBody()
+        @Html.Partial("~/Pages/Shared/_Footer.cshtml")
         </div>
-    </footer>
+    </footer>*@
+
+@*    @RenderBody()
+    @Html.Partial("~/Views/Shared/_Footer.cshtml")*@
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+@*    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+*@    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

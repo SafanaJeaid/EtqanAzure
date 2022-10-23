@@ -1,0 +1,256 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap');
+
+:root {
+    --maincolor: #ffc527;
+}
+
+body {
+    direction: rtl;
+    font-family: 'Tajawal' sans-serif;
+    text-align: right;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 500px;
+}
+
+.navbar {
+    box-shadow: 1px 2px 5px #ebebeb;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section__title {
+    position: relative;
+    display: inline-block;
+}
+
+    .section__title::after {
+        content: '';
+        display: block;
+        width: 120px;
+        position: absolute;
+        bottom: -20px;
+        height: 5px;
+        background-color: var(--maincolor);
+    }
+
+
+.home {
+    padding: 1px;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media(max-width : 760px) {
+
+    .carousel-inner img {
+        height: 200px;
+    }
+
+    .home-item-tow {
+        width: 80%;
+        top: 10%;
+        right: 10%;
+    }
+}
+
+.home-item-tow h2 {
+    color: #fff;
+    font-size: 4.5vw;
+}
+
+.home-item-tow p {
+    font-size: 2.2vw;
+}
+
+.about__item p {
+    margin: 50px 0;
+}
+
+.about__item button {
+    margin-bottom: 15px;
+}
+
+.news .news-left, .footer-left {
+    display: flex;
+    align-items: center;
+}
+
+    .news .news-left img, .footer-left img {
+        max-width: 200px;
+        margin-left: 10px;
+    }
+
+.subscribe {
+    background-image: url(../images/subscribe-our-newsletter-bg.jpg);
+    height: 450px;
+    background-size: cover;
+    padding: 1px;
+    position: relative;
+}
+
+.subscribe-item {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+
+    .subscribe-item h2 {
+        font-size: 40px;
+    }
+
+    .subscribe-item .form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .subscribe-item .form input {
+            width: 80%;
+        }
+
+    .subscribe-item button {
+        width: 15%;
+    }
+
+    .subscribe-item .form .btn-sub {
+        color: white;
+        border-radius: 100px;
+    }
+
+@media (max-width : 768px) {
+    .subscribe-item {
+        width: 80%;
+    }
+
+        .subscribe-item .form {
+            flex-direction: column;
+        }
+
+            .subscribe-item .form input {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            .subscribe-item .form button {
+                width: 50%;
+            }
+}
+
+footer {
+    background-color: #071c33;
+    position: relative;
+    bottom: 0;
+}
+
+    footer h3 {
+        background: #fff;
+        color: #222;
+        display: inline-block;
+        font-size: 16px;
+        margin: 0 0 10px;
+        padding: 10px 20px;
+        text-transform: uppercase;
+    }
+
+.footer__item {
+    font-size: 14px;
+}
+
+.footer-left {
+    font-size: 12px;
+}
+
+    .footer-left img {
+        width: 50px;
+    }
+
+    .footer-left p {
+        padding: 0px 12px;
+    }
+
+.footer-left-iterm {
+    position: relative;
+}
+
+.footer-sub-dscr {
+    font-size: 13px;
+}
+
+.footer-email {
+    position: relative;
+}
+
+    .footer-email input, .footer-email-btn {
+        border-radius: 100px;
+    }
+
+        .footer-email input:placeholder-shown {
+            font-size: 15px;
+        }
+
+.footer-email-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+}
+
+.footer-sub {
+    display: flex;
+    justify-content: space-between;
+}
+/* blog */
+.breadcrumb {
+    margin: 0;
+    justify-content: flex-end;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    float: right;
+}
+
+.blog .jumbotron {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--maincolor);
+}
+
+    .blog .jumbotron .blog-desc {
+        width: 55%;
+    }
+
+    .blog .jumbotron .blog-img {
+        width: 43%;
+    }
+
+.page-item.active .page-link {
+    background-color: #fec20b;
+    border-color: #ffc107;
+    color: #000;
+}
+
+.page-link {
+    color: #000;
+}
