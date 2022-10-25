@@ -1,14 +1,19 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap');
 
+
 :root {
-    --maincolor: #ffc527;
+    --maincolor: #426A6A;
 }
 
 body {
     direction: rtl;
-    font-family: 'Tajawal' sans-serif;
+    font-family: 'Cairo' sans-serif;
     text-align: right;
 }
+
+/*.container navbar {
+    width: 100%;
+}*/
 
 ul {
     margin: 0;
@@ -20,8 +25,16 @@ ul {
     height: 500px;
 }
 
-.navbar {
-    box-shadow: 1px 2px 5px #ebebeb;
+/*.navbar {
+    background-color: #f3f1ed;
+    width: auto;
+}*/
+
+nav {
+    background-color: #f3f1ed;
+    position: absolute;
+    width: 100%;
+    height:180px;
 }
 
 .section {
@@ -158,14 +171,15 @@ ul {
 }
 
 footer {
-    background-color: #071c33;
-    position: relative;
-    bottom: 0;
+    background-color: #85764f;
+    position: absolute;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
 }
 
     footer h3 {
-        background: #fff;
-        color: #222;
+        color: #fff;
         display: inline-block;
         font-size: 16px;
         margin: 0 0 10px;
@@ -246,11 +260,51 @@ footer {
     }
 
 .page-item.active .page-link {
-    background-color: #fec20b;
-    border-color: #ffc107;
+    background-color: #426A6A;
+    border-color: #426A6A;
     color: #000;
 }
 
 .page-link {
     color: #000;
 }
+
+.btn-warning {
+    color: #fff;
+    background-color: #426A6A;
+    border-color: #426A6A;
+}
+
+    .btn-warning:hover {
+        color: #fff;
+        background-color: #477575;
+        border-color: #477575;
+    }
+
+    .btn-check:focus + .btn-warning, .btn-warning:focus {
+        color: #fff;
+        background-color: #477575;
+        border-color: #477575;
+        box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5);
+    }
+
+    .btn-check:checked + .btn-warning, .btn-check:active + .btn-warning, .btn-warning:active, .btn-warning.active, .show > .btn-warning.dropdown-toggle {
+        color: #fff;
+        background-color: #477575;
+        border-color: #477575;
+    }
+
+        .btn-check:checked + .btn-warning:focus, .btn-check:active + .btn-warning:focus, .btn-warning:active:focus, .btn-warning.active:focus, .show > .btn-warning.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.25rem rgba(217, 164, 6, 0.5);
+        }
+
+    .btn-warning:disabled, .btn-warning.disabled {
+        color: #fff;
+        background-color: #426A6A;
+        border-color: #426A6A;
+    }
+
+/*.bg-white {
+    --bs-bg-opacity: 1;
+    background-color: #f3f1ed;
+}*/
