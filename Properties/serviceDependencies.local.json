@@ -9,6 +9,10 @@
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:ADO.NET",
       "dynamicId": null
+    },
+    "identityapp1": {
+      "type": "identityapp.default",
+      "dynamicId": null
     }
   }
 }

@@ -1,5 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap');
-
+﻿@import url('https://fonts.googleapis.com/css?family=Tajawal ');
 
 :root {
     --maincolor: #426A6A;
@@ -7,7 +6,7 @@
 
 body {
     direction: rtl;
-    font-family: 'Cairo' sans-serif;
+    font-family: 'Tajawal';
     text-align: right;
 }
 
@@ -112,9 +111,12 @@ nav {
     }
 
 .subscribe {
-    background-image: url(../images/subscribe-our-newsletter-bg.jpg);
+    background-image: url(../images/etqanmockup.png);
     height: 450px;
-    background-size: cover;
+/*    width:100%;
+*/    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     padding: 1px;
     position: relative;
 }
@@ -125,7 +127,7 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    color: white;
+    color: black;
 }
 
     .subscribe-item h2 {
@@ -149,6 +151,12 @@ nav {
     .subscribe-item .form .btn-sub {
         color: white;
         border-radius: 100px;
+    }
+
+    .subscribe-item p {
+        /*        background-color: white;
+        opacity: 0.25;*/
+        background-color: rgba(255,255,255,0.75);
     }
 
 @media (max-width : 768px) {
