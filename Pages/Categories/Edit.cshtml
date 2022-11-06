@@ -1,0 +1,51 @@
+﻿@page
+@model AbbyTryout.Pages.Categories.EditModel
+
+<form method="post">
+    <input hidden asp-for="AlhasrTabel.ID">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary pl-3">Edit Category</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="AlhasrTabel.Title"></label>
+            <input asp-for="AlhasrTabel.Title" class="form-control" />
+            <span asp-validation-for="AlhasrTabel.Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AlhasrTabel.location"></label>
+            <input asp-for="AlhasrTabel.location" class="form-control" />
+            <span asp-validation-for="AlhasrTabel.location" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AlhasrTabel.building"></label>
+            <input asp-for="AlhasrTabel.building" class="form-control" />
+            <span asp-validation-for="AlhasrTabel.building" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AlhasrTabel.roomlabel"></label>
+            <input asp-for="AlhasrTabel.roomlabel" class="form-control" />
+            <span asp-validation-for="AlhasrTabel.roomlabel" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AlhasrTabel.department"></label>
+            <input asp-for="AlhasrTabel.department" class="form-control" />
+            <span asp-validation-for="AlhasrTabel.department" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AlhasrTabel.roomactivity"></label>
+            <input asp-for="AlhasrTabel.roomactivity" class="form-control" />
+            <span asp-validation-for="AlhasrTabel.roomactivity" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AlhasrTabel.Modified"></label>
+            <input asp-for="AlhasrTabel.Modified" class="form-control" />
+            <span asp-validation-for="AlhasrTabel.Modified" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px;">Update</button>
+        <a asp-page="Index" class="btn btn-secondary" style="width:150px;"> Back to List</a>
+    </div>
+
+</form>
